@@ -9,34 +9,8 @@
 </head>
 
 <body>
-    <style>
-        #main_frame {
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
     <script>
-        var url = "http://shapedfij.bplaced.net/index.php";
-        var iframe = document.createElement("iframe");
-        iframe.onload = function () {
-            alert(iframe.contentWindow.document.body.innerHTML);
-        }
-        iframe.src = url;
-        iframe.style.display = "block";
-        iframe.style.position = "absolute";
-        iframe.style.border = "none";
-        iframe.style.top = 0;
-        iframe.style.bottom = 0;
-        iframe.style.left = 0;
-        iframe.style.right = 0;
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        document.body.appendChild(iframe);
+        window.location.replace("http://shapedfij.bplaced.net");
     </script>
 </body>
 
