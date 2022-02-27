@@ -1,17 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+    <title>Alles Gute zum Geburtstag</title>
+  </head>
+  <body>
+    <iframe src="matrix.html"></iframe>
+    <div id="page_1" style="visibility: visible">
+      <div>
+        <span>
+          Alles Gute
+          <p></p>
+          zum
+          <p></p>
+          Geburtstag 🥳
+          <p></p>
+          <button onclick="next_page();">Nächste Seite</button>
+        </span>
+      </div>
+    </div>
+    <div id="page_2" style="visibility: hidden">
+      <span>
+        <h1>Warum?</h1>
+		<p>
+		Das weiß ich eigentlich auch nicht so genau </p><p>aber ich dachte das kann ja nicht schaden.
+		</p>
+		<p>
+		Die Seite ist nur vorübergehend im "Geburtstagsmodus" </p><p>und ich werde sie auf jeden Fall weiterführen, </p><p>das heißt wenn du dich irgendwann mal fragst </p><p>was ich so mache, hast du gute Chancen </p><p>hier Infos zu bekommen.
+		</p>
+		<p>
+		Ach ja auf der nächsten Seite</p><p>war noch ein "Rätsel" geplant </p><p>aber wir wussten nicht was da hin soll </p><p>aber mal sehen vllt fällt mir ja noch was ein.
+		</p>
+        <button onclick="next_page();">Nächste Seite</button>
+      </span>
+    </div>
+    <div id="page_3" style="visibility: hidden">
+      <span>
+        <h1>Seite 3</h1>
+			<p class="container">
+				<input type="text" maxlength="1" />
+				<input type="text" maxlength="1" />
+				<input type="text" maxlength="1" />
+				<input type="text" maxlength="1" 7/>
+			</p>
+      </span>
+	<style>
+			#page_3 {
+				background-color: rgb(22,27,34);
+				color: #a1a1a1;
+			}
+			#page_3 .container input {
+				background-color: rgb(12,17,23);
+				width: 4vw;
+				height: 5vh;
+				font-size: calc(2vw + 2.5vh);
+				border-radius: calc(0.5vh + 0.3vw);
+				text-align: center;
+				padding: calc(1vh + 1vw);
+				border: solid 5px rgb(87,166,255);
+				color: #a1a1a1;
+				font-weight: bold;
+			}
+#page_3 .container input:focus {
+	border-color: white;
+}
+		*:focus {
+			outline: none;
+		}
+	</style>
+	<script>
+	/*
+	document.getElementById("page_1").style.visibility = "hidden";
+	document.getElementById("page_2").style.visibility = "hidden";
+	document.getElementById("page_3").style.visibility = "visible";
+	*/
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>:)</title>
-</head>
-
-<body>
-    <script>
-        window.location.replace("http://shapedfij.bplaced.net");
-    </script>
-</body>
-
+	var container = document.getElementsByClassName("container")[0];
+	container.onkeyup = function(e) {
+    var target = e.srcElement || e.target;
+    var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+    var myLength = target.value.length;
+    if (myLength >= maxLength) {
+        var next = target;
+        while (next = next.nextElementSibling) {
+            if (next == null)
+				//execute function after input
+                break;
+            if (next.tagName.toLowerCase() === "input") {
+                next.focus();
+                break;
+            }
+        }
+    }
+    // Move to previous field if empty (user pressed backspace)
+    else if (myLength === 0) {
+        var previous = target;
+        while (previous = previous.previousElementSibling) {
+            if (previous == null)
+                break;
+            if (previous.tagName.toLowerCase() === "input") {
+                previous.focus();
+                break;
+            }
+        }
+    }
+}
+	</script>
+    </div>
+  </body>
 </html>

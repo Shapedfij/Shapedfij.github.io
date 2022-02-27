@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SHA256</title>
+		<script src="sha256.js"></script>
+	</head>
+	<body>
+	<script>
+		var input = SHA256("Hello World");
+		var password = "a591a6d40bf420404a011733cfb7b190d62c65bf0bcda32b57b277d9ad9f146e";
+		if(input == password) {
+			alert("ok");
+		}
+		document.writeln(input);
+	</script>
+		<div id="text"></div>
+	</body>
+</html>
